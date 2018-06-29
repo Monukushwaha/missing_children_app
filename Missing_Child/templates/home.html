@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} home {% endblock %}
+
+{% block content%}
+
+<h3>Home</h3>
+{% for children in child %}
+
+
+
+<div class="card-image waves-effect waves-block waves-light">
+<img  src="{{ children.image.url }}" height="200px" width="200px" alt="{{children.image}}" >
+</div>
+
+
+<div class="container">
+<p>Name :- {{children.name}}</p>
+<p>Age :- {{children.age}}</p>
+<p>Details of Child :- {{children.details}}</p>
+</div>
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Upload{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12"
+    <div class="col-sm-1">
+  <h2>upload</h2>
+  </div>
+
+<div class="col-sm-8">
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in form %}
+    <p>{{ field.label_tag }}
+      {{ field }}
+      {% for error in field.errors %}
+      <p style="color:red">{{ error }}</p>
+      {% endfor %}
+    </p>
+    {% endfor %}
+    <br>
+    <button type="submit" style="float:right">Upload</button>
+
+  </form><br>
+</div>
+</div>
+</div>
+
+
+{% endblock %}
